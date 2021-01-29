@@ -32,11 +32,11 @@ RUN apt-get update && apt-get install -y \
     libjs-jquery-ui
 
 #install brainstorm
-ADD brainstorm_210128.zip /brainstorm/
-#RUN ls /brainstorm
+ADD brainstorm3 /brainstorm3
+ENV PATH=$PATH:/brainstorm3/bin/R2020a
 
-#ADD virtualgl_2.6_amd64.deb /
-#RUN dpkg -i /virtualgl_2.6_amd64.deb
+ADD virtualgl_2.6_amd64.deb /
+RUN dpkg -i /virtualgl_2.6_amd64.deb
 
 ADD startvnc.sh /
 ADD xstartup /root/.vnc/xstartup
@@ -46,6 +46,11 @@ ENV USER=root X11VNC_PASSWORD=override
 ADD xfce4 /root/.config/xfce4
 
 EXPOSE 5900
+
+ENV MATLABROOT=/opt/mcr/v98
+
+#initialize database TODO
+#RUN brainstorm3.command --init
 
 CMD ["/startvnc.sh"]
 

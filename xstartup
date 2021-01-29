@@ -1,15 +1,12 @@
 #!/bin/bash
 
 #should I do this on startvnc?
-#vglclient &
+vglclient &
 
 XFCE_PANEL_MIGRATE_DEFAULT=true startxfce4 &
 
-#not sure where this needs to be.. but maybe doesn't matter? without this, fsleyes popups
-export FSLDIR=/
-
 #vglrun fsleyes `find $INPUT_DIR -name *.nii.gz` &
-brainstorm &
+vglrun /brainstorm3/bin/R2020a/brainstorm3.command &
 pid=$!
 
 #maximize fsleyes
