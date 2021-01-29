@@ -35,6 +35,8 @@ RUN apt-get update && apt-get install -y \
 ADD brainstorm_210128.zip /brainstorm/
 #RUN ls /brainstorm
 
+ADD .brainstorm /root/
+
 #ADD virtualgl_2.6_amd64.deb /
 #RUN dpkg -i /virtualgl_2.6_amd64.deb
 
