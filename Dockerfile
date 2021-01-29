@@ -37,6 +37,7 @@ ENV PATH=$PATH:/brainstorm3/bin/R2020a
 
 ADD virtualgl_2.6_amd64.deb /
 RUN dpkg -i /virtualgl_2.6_amd64.deb
+ADD .brainstorm /root/
 
 ADD startvnc.sh /
 ADD xstartup /root/.vnc/xstartup
